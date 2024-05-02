@@ -1,1 +1,24 @@
 
+To ensure rollback capability in the Terraform script, we can leverage Terraform's state management features along with version control systems like Git. 
+
+State Management:
+Terraform maintains a state file (terraform.tfstate or remote state backend) to track the state of the managed infrastructure.
+Before making any changes, Terraform generates an execution plan based on the current state and the desired configuration.
+In case of errors or failures during the apply operation, Terraform can automatically roll back changes to the previous known state.
+Version Control with Git:
+Version control systems like Git allow you to track changes to your Terraform configurations and state files over time.
+By committing changes to a version control repository, you can easily revert to a previous state or apply rollbacks when necessary.
+Create Git Commits for Infrastructure Changes:
+After making changes to your Terraform configuration, commit the changes to your Git repository along with descriptive commit messages.
+This ensures that each change to your infrastructure is tracked and can be rolled back if needed.
+Use Git Branches for Feature Development:
+Create separate branches for different features or changes to your infrastructure.
+Before merging changes into the main branch, test them thoroughly to ensure they work as expected.
+Tag Releases for Production Deployments:
+Tag releases in your Git repository to mark stable versions of your infrastructure.
+This allows you to easily roll back to previous releases in case of issues with newer deployments.
+Implement Continuous Integration/Continuous Deployment (CI/CD):
+Set up CI/CD pipelines to automate the deployment and rollback process.
+Include tests and validation steps in your pipeline to ensure that changes are safe to deploy.
+
+
